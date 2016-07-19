@@ -1,9 +1,9 @@
 ;;; birds-of-paradise-theme.el --- custom theme for faces
 
-;; Copyright (C) 2011, 2012 Paul M. Rodriguez <paulmrodriguez@gmail.com>
+;; Copyright (C) 2011, 2012, 2013, 2015 Paul M. Rodriguez <paulmrodriguez@gmail.com>
 
 ;; Author: Paul M. Rodriguez <pmr@ruricolist.com>
-;; Version: 0.2
+;; Version: 0.3
 
 ;; This file is not part of GNU Emacs.
 
@@ -39,21 +39,21 @@
   "Port of the brown-based warm light-on-dark theme by Joe Bergantine.")
 
 (let ((brown-1 "#372725") (brown-2 "#6B4E32") (brown-3 "#2A1D1D")
-                          (brown-4 "#523D2B") (brown-5 "#7D504A")
-                          (brown-6 "#523E2B") (brown-7 "#e2c991")
-                          (brown-8 "#DDAA6E")
+      (brown-4 "#523D2B") (brown-5 "#7D504A")
+      (brown-6 "#523E2B") (brown-7 "#e2c991")
+      (brown-8 "#DDAA6E") (brown-9 "#865C38")
       (white-1 "#E6E1C4") (white-2 "#E6E1DC")
       (black-1 "#1F1611") (black-2 "#16120E")
       (gray-1 "gray25")
       (yellow-1 "#D9D762") (yellow-2 "#EFAC32") (yellow-3 "#EFCB43")
-                           (yellow-4 "#EFC232") (yellow-5 "#FFC05C")
+      (yellow-4 "#EFC232") (yellow-5 "#FFC05C")
       (orange-1 "#EF5D32") (orange-2 "#CC762E") (orange-3 "#C74725")
-                           (orange-4 "#EB7300")
+      (orange-4 "#EB7300")
       (red-1 "#990000") (red-2 "#660000")    (red-3 "#CC4232")
-                        (red-4 "#BE3250")    (red-5 "#D23850")
-                        (red-6 "firebrick4") (red-7 "#bb4949")
+      (red-4 "#BE3250")    (red-5 "#D23850")
+      (red-6 "firebrick4") (red-7 "#bb4949")
       (blue-1 "#7DAF9C") (blue-2 "#6C99BB") (blue-3 "#5798AE")
-                         (blue-4 "#93C1BC") (blue-5 "#2F33AB")
+      (blue-4 "#93C1BC") (blue-5 "#2F33AB")
       (purple-1 "#BB99BB") (purple-2 "#8856D2") (purple-3 "#BE73FD")
       (purple-4 "#f0898f")
       (green-1 "#144212") (green-2 "SeaGreen"))
@@ -66,9 +66,11 @@
    `(highlight ((t (:background ,black-1 :foreground ,white-1))))
    `(region ((t (:background ,black-2))))
    '(cua-rectangle ((t (:inherit region))))
+   '(italic ((t (:italic t))))
    `(font-lock-builtin-face ((t (:foreground ,blue-2))))
-   `(font-lock-comment-face ((t (:italic t :foreground ,brown-2))))
+   `(font-lock-comment-face ((t (:italic t :foreground ,brown-9))))
    `(font-lock-comment-delimiter-face ((t (:inherit font-lock-comment-face))))
+   `(parenthesis ((t (:italic nil :foreground ,brown-2))))
    `(font-lock-constant-face ((t (:foreground ,blue-2))))
    `(font-lock-doc-face ((t (:inherit font-lock-comment-face))))
    `(font-lock-function-name-face ((t (:foreground ,yellow-2))))
@@ -110,6 +112,9 @@
    `(whitespace-line ((t (:background ,gray-1))))
    `(whitespace-indentation ((t (:foreground ,brown-6))))
    `(whitespace-space-after-tab ((t (:foreground ,brown-6))))
+   `(magit-diff-add ((t (:foreground ,green-2))))
+   `(magit-diff-del ((t (:foreground ,red-7))))
+   `(magit-item-highlight ((t (:background ,brown-6))))
    `(elscreen-tab-background-face ((t (:background ,brown-3))))
    `(elscreen-tab-control-face ((t (:background ,brown-2 :foreground ,white-1 :underline nil))))
    `(elscreen-tab-current-screen-face ((t (:background ,brown-2 :foreground ,white-1))))
@@ -204,6 +209,7 @@
    '(rainbow-delimiters-unmatched-face ((t (:inherit error))))
    `(minimap-active-region-background ((t (:background ,brown-4))))
    `(org-special-keyword ((t (:foreground ,brown-5))))
+   `(org-table ((t (:foreground ,blue-2))))
    '(eshell-prompt ((t (:inherit minibuffer-prompt))))
    '(eshell-ls-symlink ((t (:inherit link :bold t))))
    `(eshell-ls-readonly ((t (:foreground ,brown-7))))
@@ -218,6 +224,10 @@
    '(sh-heredoc ((t (:inherit font-lock-string-face))))
    `(woman-italic ((t :foreground ,yellow-2 :italic t)))
    `(woman-bold ((t :foreground ,blue-2 :weight normal)))
+   `(bm-face ((t :background ,orange-3)))
+   `(bm-persistent-face ((t :background ,purple-1)))
+   `(bm-fringe-face ((t :background ,orange-3)))
+   `(bm-fringe-persistent-face ((t :background ,purple-1)))
    '(nxml-comment-content ((t (:inherit font-lock-comment-face))))
    `(nxml-tag-delimiter ((t (:foreground ,yellow-3))))
    `(nxml-processing-instruction-target ((t (:foreground ,brown-2))))
